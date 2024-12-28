@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body.light-mode {
+    --site-bg-color: white;
+    --toolbar-bg-color: white;
+    --botoes-toolbar-bg-color: #444;
+    --hover-botoes-toolbar-bg-color: #273884;
+    --header-bg-color: #333;
+    --header-text-color: white;
+    --footer-bg-color: #333;
+    --footer-text-color: white;
+    --button-bg-color: #444;
+    --button-hover-bg-color: #555;
+    --dropdown-bg-color: white;
+    --dropdown-hover-bg-color: #f1f1f1;
+    --panel-border-color: #ddd;
+    --panel-bg-gradient-start: #ffffff;
+    --panel-bg-gradient-end: #f7f7f7;
+    --panel-shadow-color: rgba(0, 0, 0, 0.1);
+    --panel-hover-shadow-color: rgba(0, 0, 0, 0.15);
+    --chat-bg-color: #fafafa;
+    --chat-text-color: #333;
+    --input-border-color: #ccc;
+    --input-bg-color: white;
+    --input-text-color: #333;
+    --input-placeholder-color: #2c2c2c;
+    --input-focus-border-color: #bbb;
+    --input-focus-bg-color: #f1f1f1;
+    --editor-bg-color: white;
+    --editor-shadow-color: rgba(0, 0, 0, 0.258);
+    --slider-background-light: #bbb;
+}
+
+body.dark-mode {
+    --site-bg-color: #121212;
+    --toolbar-bg-color: #1e1e1e;
+    --botoes-toolbar-bg-color: #bbb;
+    --hover-botoes-toolbar-bg-color: #888;
+    --header-bg-color: #1e1e1e;
+    --header-text-color: #f1f1f1;
+    --footer-bg-color: #1e1e1e;
+    --footer-text-color: #f1f1f1;
+    --button-bg-color: #444;
+    --button-hover-bg-color: #555;
+    --dropdown-bg-color: #333;
+    --dropdown-hover-bg-color: #444;
+    --panel-border-color: #444;
+    --panel-bg-gradient-start: #2b2b2b;
+    --panel-bg-gradient-end: #1e1e1e;
+    --panel-shadow-color: rgba(0, 0, 0, 0.5);
+    --panel-hover-shadow-color: rgba(0, 0, 0, 0.7);
+    --chat-bg-color: #1e1e1e;
+    --chat-text-color: #f1f1f1;
+    --input-border-color: #555;
+    --input-bg-color: #5a5959;
+    --input-text-color: #ccc;
+    --input-placeholder-color: #ccc;
+    --input-focus-border-color: #777;
+    --input-focus-bg-color: #333;
+    --editor-bg-color: #1e1e1e;
+    --editor-shadow-color: rgba(255, 255, 255, 0.1);
+    --switch-checked-background-dark: #4e4d4d;
+}
+
+body {
+    background-color: var(--site-bg-color);
+    margin: 0;
+}
+
+/* toolbar.css */
+/* ========== */
+.ql-toolbar.ql-snow {
+    border: 1px solid #ccc;
+    background-color: var(--toolbar-bg-color);
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    padding: 8px;
+}
+
+.ql-snow .ql-stroke {
+    fill: none;
+    stroke: var(--botoes-toolbar-bg-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
+    fill: var(--botoes-toolbar-bg-color);
+}
+
+.ql-snow.ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:focus,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow .ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+    color: var(--hover-botoes-toolbar-bg-color);
+}
+
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-fill,
+.ql-snow.ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button:focus .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
+    fill: var(--hover-botoes-toolbar-bg-color);
+}
+
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button:focus .ql-stroke,
+.ql-snow .ql-toolbar button:focus .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow.ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar button:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow .ql-toolbar button:focus .ql-stroke-miter,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
+    stroke: var(--hover-botoes-toolbar-bg-color);
+}
+
+/* header.css */
+/* ========== */
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.header-left .logo {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+}
+
+.header-center button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: var(--button-bg-color);
+    border: none;
+    color: var(--header-text-color);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.header-center button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.header-right {
+    position: relative;
+}
+
+.toggle-switch {
+    width: 45px;
+    height: 25px;
+    margin-left: auto; /* Alinha à direita dentro de um contêiner flexível */
+    margin-right: 15px; /* Adiciona espaçamento à direita */
+    position: relative;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-background-light);
+    transition: 0.4s;
+    border-radius: 34px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--switch-checked-background-dark);
+}
+
+input:checked + .slider:before {
+    transform: translateX(19px);
+}
+
+.user-icon {
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: var(--dropdown-bg-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1002;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--dropdown-hover-bg-color);
+}
+
+.menu-icon {
+    background: none;
+    color: var(--header-text-color);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #313131;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap; /* Impede que o texto quebre em linhas */
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar.open {
+    width: 230px;
+}
+
+/* footer.css */
+/* ========== */
+
+footer {
+    width: 100%;
+    height: 30px;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+#page-info,
+#zoom-info {
+    font-size: 12px;
+}
+
+/* arnaldo.css */
+/* =========== */
+
+#under-panel {
+    color: var(--chat-text-color);
+    position: fixed;
+    top: 190px;
+    right: 30px;
+    width: 280px; /* Ajuste da largura para melhor proporção */
+    max-height: calc(
+        100vh - 160px
+    ); /* Ajuste para margem adicional do topo e do footer */
+    border-left: 1px solid var(--panel-border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    background: linear-gradient(
+        135deg,
+        var(--panel-bg-gradient-start),
+        var(--panel-bg-gradient-end)
+    );
+    z-index: 999;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: -2px 0 12px var(--panel-shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0.98;
+}
+
+#under-panel:hover {
+    box-shadow: -2px 0 18px var(--panel-hover-shadow-color);
+}
+
+#chat {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    background-color: var(--chat-bg-color);
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: var(--chat-text-color);
+    max-height: 120px; /* Ajustar de acordo com a proporção geral */
+}
+
+#chat-input {
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 11px;
+    color: var(--input-text-color);
+    line-height: 1.4;
+    border: 1px solid var(--input-border-color);
+    border-radius: 6px;
+    background-color: var(--input-bg-color);
+    /* transition: border-color 0.2s, background-color 0.2s; */
+}
+
+#chat-input::placeholder {
+    color: var(--input-placeholder-color); /* Define a cor do placeholder */
+    opacity: 1; /* Garante que a opacidade não afete a cor */
+}
+
+#chat-input:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+    background-color: var(--input-focus-bg-color);
+}
+
+/* text.css */
+
+.page-container {
+    color: var(--input-text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.ql-editor {
+    width: 210mm;
+    min-height: 220mm;
+    background-color: var(--editor-bg-color);
+    border: 1px solid var(--input-border-color);
+    box-shadow: 0 0 10px var(--editor-shadow-color);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.ql-editor::before {
+    content: attr(data-placeholder); /* Exibe o texto do placeholder */
+    color: var(
+        --input-placeholder-color
+    ) !important; /* Força a aplicação da cor */
+    font-style: italic; /* Opcional: estilo itálico para o placeholder */
+    pointer-events: none; /* Permite que o editor seja clicável */
+    position: absolute;
+    left: 20px; /* Ajusta o alinhamento horizontal do placeholder */
+    top: 20px; /* Ajusta o alinhamento vertical do placeholder */
+    opacity: 0.6; /* Ajusta a opacidade do placeholder */
+    display: block; /* Garante que o placeholder seja exibido como um bloco */
+}
+
+.ql-editor.ql-blank::before {
+    content: attr(data-placeholder);
+}
+
+.ql-editor:not(.ql-blank)::before {
+    display: none; /* Esconde o placeholder quando o editor não está vazio */
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+    border: none;
+    margin-top: 10px;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label,
+.ql-snow .ql-picker.ql-size .ql-picker-item {
+    &::before {
+        content: attr(data-value) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #under-panel {
+        width: 100%;
+        right: 0;
+        max-height: calc(100vh - 120px);
+        padding: 10px;
+    }
+
+    #chat {
+        max-height: 100px;
+        padding: 10px;
+    }
+
+    header,
+    footer {
+        padding: 0 10px;
+    }
+
+    .header-center button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .page-container {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+

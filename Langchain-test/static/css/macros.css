@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#macro-list {
+    margin-bottom: 20px;
+}
+
+.macro-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.macro-name {
+    width: 30%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.macro-snippet {
+    width: 55%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: none;
+}
+
+.delete-macro-btn {
+    padding: 10px 15px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-macro-btn:hover {
+    background: #c0392b;
+}
+
+/* Styling for the button container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styling for the Add Macro button */
+#add-macro-btn {
+    flex: 1;
+    margin-right: 10px;
+    padding: 15px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#add-macro-btn:hover {
+    background: #2980b9;
+}
+
+/* Styling for the Save Macros button */
+#save-macros-btn {
+    flex: 1;
+    padding: 15px;
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#save-macros-btn:hover {
+    background: #27ae60;
+}
+
+#back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    line-height: 0;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+#back-button:hover {
+    background-color: #bbb;
+}
+
+#confirmation-message {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right of the screen */
+    background-color: #2ecc71; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hide the message by default */
+    font-size: 16px;
+}
+
+/* Optional: Animation for the message */
+#confirmation-message.show {
+    display: block;
+    animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

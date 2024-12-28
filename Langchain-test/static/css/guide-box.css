@@ -1,0 +1,53 @@
+/* Guide Box */
+.guide-box {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none;
+    white-space: nowrap; /* Ensure that content stays on one line */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis; /* Show ellipsis if content overflows */
+}
+
+.guide-box p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap; /* Keep text on the same line */
+}
+
+.guide-box input {
+    padding: 8px;
+    margin: 0 5px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+    min-width: 50px; /* Ensure input has a minimum width */
+    width: auto; /* Let the input field expand naturally */
+    white-space: nowrap; /* Keep input on the same line */
+}
+
+.guide-box button {
+    width: 100%;
+    padding: 8px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.guide-box button:hover {
+    background-color: #45a049;
+}

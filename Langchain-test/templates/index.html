@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Laudário</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/arnaldo.css') }}"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header>
+            <div class="header-left">
+                <button id="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">Laudário</div>
+            </div>
+            <label class="toggle-switch">
+                <input type="checkbox" id="themeSwitch" />
+                <span class="slider"></span>
+            </label>
+            <div class="header-right">
+                <div id="user" class="user-icon" onclick="toggleDropdown()">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div id="dropdown" class="dropdown-menu">
+                    <a href="#">Profile</a>
+                    <a href="#" onclick="redirectToMacros()">Macros</a>
+                    <a href="#">Sign Out</a>
+                </div>
+            </div>
+        </header>
+
+        <div id="sidebar" class="sidebar">
+            <a href="#">Home</a>
+            <a href="#" onclick="redirectToEditor()">Editor</a>
+            <a href="#">Gerador</a>
+            <a href="#">Configurações</a>
+            <a href="#">Ajuda</a>
+        </div>
+
+        <div class="page-container">
+            <div id="toolbar"></div>
+            <div id="editor"></div>
+            <div id="under-panel">
+                <div id="chat-title">Assistente IA</div>
+                <div id="chat">
+                    <!-- Mensagens do chat aparecerão aqui -->
+                </div>
+                <textarea
+                    id="chat-input"
+                    placeholder="Digite uma mensagem..."
+                    rows="3"
+                ></textarea>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <span id="page-info">Page 1</span>
+                <span id="zoom-info">Zoom: 100%</span>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+        <script
+            type="module"
+            src="{{ url_for('static', filename='js/text.js') }}"
+        ></script>
+        <script src="{{ url_for('static', filename='js/macros.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/events.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/arnaldo.js') }}"></script>
+        <script>
+            function redirectToEditor() {
+                // Lógica adicional pode ser adicionada aqui, se necessário
+                window.location.href =
+                    "https://laudarioeditor-65840c3b258d.herokuapp.com/editor/";
+            }
+        </script>
+    </body>
+</html>

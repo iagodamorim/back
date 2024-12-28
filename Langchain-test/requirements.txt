@@ -1,0 +1,15 @@
+flask
+openpyxl
+openai
+pandas
+scikit-learn
+unidecode
+python-dotenv
+gunicorn
+google-api-python-client
+google-auth
+unidecode
+langchain
+langchain_openai
+langchain-community
+langchain-core
